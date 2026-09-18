@@ -1,0 +1,347 @@
+<!doctype html>
+<!--
+  Template de mockup estrutural de case study (landing page), não artigo.
+  Serve pra avaliar hierarquia visual (o que aparece primeiro, se a Solução
+  demora demais pra chegar) antes de produzir qualquer imagem de verdade.
+  Ver `case-study.md`, seção "Mockup visual", pra quando e como usar.
+
+  Como usar:
+  1. Duplique este arquivo pra dentro da pasta do case (ex: .../slug-do-case/landing-mockup.html).
+  2. Preencha o conteúdo entre [colchetes], puxando do 03-redacao.md já pronto
+     (a versão "Bloco", não a "Sheet"). Corte agressivamente: parágrafo de
+     1-3 linhas, bullets de poucas palavras.
+  3. Troque --accent por uma cor ligada ao tema específico desse case.
+  4. Ajuste a quantidade de passos do Processo e de blocos da Solução conforme
+     o case pedir, não force 2 e 2 se o conteúdo real for diferente.
+  5. Publicar como Artifact pra avaliar visualmente antes de produzir imagens de verdade.
+
+  Se a pessoa já tem um site de portfólio no ar, isso aqui é só o fallback —
+  prefira replicar a estrutura/estilo visual do site real dela.
+-->
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<title>[Nome do Case] · [Empresa] — mockup landing page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  :root {
+    --bg: #000000;
+    --surface: #141414;
+    --surface-2: #1c1c1c;
+    --border: #333333;
+    --text: #ffffff;
+    --text-muted: #9e9e9e;
+    --text-faint: #6b6b6b;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", "Roboto Mono", monospace;
+    --content-width: 760px;
+
+    /* Acento contextual, escolher por case */
+    --accent: #e8b448;
+    --accent-soft: rgba(232, 180, 72, 0.12);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .wrap { max-width: var(--content-width); margin: 0 auto; padding: 0 24px; }
+  .wrap-wide { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+
+  section { padding: 96px 0; }
+  section + section { border-top: 1px solid var(--border); }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 16px;
+    height: 1px;
+    background: var(--accent);
+    display: inline-block;
+  }
+
+  h1 {
+    font-size: clamp(34px, 5.5vw, 54px);
+    line-height: 1.12;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+    margin: 0 0 28px;
+  }
+
+  h2 {
+    font-size: clamp(24px, 3.4vw, 32px);
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+    margin: 0 0 14px;
+  }
+
+  h3 {
+    font-size: 19px;
+    font-weight: 600;
+    margin: 0 0 8px;
+  }
+
+  p { color: var(--text-muted); margin: 0; max-width: 62ch; }
+  .lede { color: var(--text); font-size: 18px; max-width: 58ch; }
+
+  /* ---- Hero ---- */
+  .hero { padding-top: 72px; }
+  .hero-meta {
+    display: flex; gap: 24px; flex-wrap: wrap;
+    font-family: var(--font-mono); font-size: 12px; color: var(--text-faint);
+    margin-bottom: 32px; letter-spacing: 0.02em;
+  }
+
+  /* ---- Placeholder blocks ---- */
+  .ph {
+    background:
+      repeating-linear-gradient(135deg, var(--surface-2) 0 12px, var(--surface) 12px 24px);
+    border: 1px dashed var(--border);
+    border-radius: 4px;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-faint);
+    margin-top: 40px;
+  }
+  .ph-inner {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 10px 18px;
+    border-radius: 3px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.03em;
+  }
+  .ph-inner b { color: var(--text-muted); font-weight: 600; display: block; margin-bottom: 3px; font-family: var(--font-sans); font-size: 13px; letter-spacing: 0; }
+  .ph.small { aspect-ratio: 4 / 3; margin-top: 20px; }
+
+  /* ---- Outcome ---- */
+  .outcome-stat {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    text-wrap: balance;
+    max-width: 20ch;
+    margin: 0 0 18px;
+  }
+  .outcome-support { color: var(--text-muted); font-size: 15px; max-width: 50ch; }
+  .outcome-support .flag {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent);
+    display: block;
+    margin-top: 18px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ---- Quick facts ---- */
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding: 40px 0;
+  }
+  .fact dt {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--text-faint); margin-bottom: 6px;
+  }
+  .fact dd { margin: 0; font-size: 15px; color: var(--text); }
+
+  /* ---- Process ---- */
+  .steps { display: flex; flex-direction: column; gap: 56px; }
+  .step { display: grid; grid-template-columns: 220px 1fr; gap: 32px; align-items: start; }
+  .step-num {
+    font-family: var(--font-mono); font-size: 13px; color: var(--accent);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .step-num .line { width: 28px; height: 1px; background: var(--border); }
+  .step h3 { margin-top: 4px; }
+  .step p { font-size: 15px; }
+
+  /* ---- Solution blocks ---- */
+  .sol-block { padding: 72px 0; }
+  .sol-block + .sol-block { border-top: 1px solid var(--border); }
+  .sol-bullets { list-style: none; margin: 20px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+  .sol-bullets li {
+    font-family: var(--font-mono); font-size: 12px; color: var(--text-muted);
+    border: 1px solid var(--border); border-radius: 999px; padding: 6px 14px;
+  }
+
+  /* ---- Learnings ---- */
+  .learnings blockquote {
+    margin: 0; padding: 0 0 0 24px; border-left: 2px solid var(--accent);
+    font-size: 19px; line-height: 1.55; color: var(--text); text-wrap: balance;
+    max-width: 56ch;
+  }
+
+  footer { padding: 56px 0 80px; }
+  footer p { font-family: var(--font-mono); font-size: 12px; color: var(--text-faint); }
+
+  @media (max-width: 640px) {
+    section { padding: 64px 0; }
+    .facts { grid-template-columns: repeat(2, 1fr); }
+    .step { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Case Study · [Empresa]</div>
+    <h1>[Headline: punchline outcome-oriented, 10-16 palavras]</h1>
+    <div class="hero-meta">
+      <span>[SEU PAPEL]</span>
+      <span>[EMPRESA]</span>
+      <span>[MÊS/ANO DE LANÇAMENTO]</span>
+    </div>
+    <div class="ph">
+      <div class="ph-inner">
+        <b>Capa / hero</b>
+        [descrição curta da imagem]
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Resultado</div>
+    <div class="outcome-stat">[Outcome mais forte, 1 frase, com número se tiver]</div>
+    <p class="outcome-support">
+      [1 linha de apoio, o que exatamente mudou]
+      <span class="flag">[FONTE/CONFIRMAÇÃO DO DADO, SE HOUVER]</span>
+    </p>
+    <div class="ph small">
+      <div class="ph-inner">
+        <b>[Nome da imagem]</b>
+        [gráfico, print ou tela que prova o resultado]
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap-wide">
+    <dl class="facts">
+      <div class="fact"><dt>Empresa</dt><dd>[Empresa]</dd></div>
+      <div class="fact"><dt>Papel</dt><dd>[Seu papel no projeto]</dd></div>
+      <div class="fact"><dt>Período</dt><dd>[Quando foi ao ar]</dd></div>
+      <div class="fact"><dt>Tipo</dt><dd>[Tático / Visão]</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Processo</div>
+    <h2 style="margin-bottom:48px;">[Frase curta resumindo o arco de decisões]</h2>
+    <div class="steps">
+
+      <!-- Repita/ajuste o número de passos conforme o Processo real do case -->
+      <div class="step">
+        <div class="step-num"><span class="line"></span>01 · [Nome do passo]</div>
+        <div>
+          <h3>[Título curto da decisão]</h3>
+          <p>[1 linha explicando a decisão]</p>
+          <div class="ph small">
+            <div class="ph-inner"><b>[sem conceito ainda / nome da imagem]</b>[o que mostraria]</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num"><span class="line"></span>02 · [Nome do passo]</div>
+        <div>
+          <h3>[Título curto da decisão]</h3>
+          <p>[1 linha explicando a decisão]</p>
+          <div class="ph small">
+            <div class="ph-inner"><b>[sem conceito ainda / nome da imagem]</b>[o que mostraria]</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section style="padding-bottom:0;">
+  <div class="wrap">
+    <div class="eyebrow">Solução</div>
+    <h2>[Frase curta resumindo a entrega]</h2>
+  </div>
+
+  <!-- Repita/ajuste o número de blocos conforme os destaques reais da Solução -->
+  <div class="sol-block">
+    <div class="wrap">
+      <h3 style="font-size:22px;">[Nome do destaque 1]</h3>
+      <p>[Parágrafo curto, 1-3 linhas, o que mudou e por quê]</p>
+      <ul class="sol-bullets">
+        <li>[bullet curto]</li>
+        <li>[bullet curto]</li>
+        <li>[bullet curto]</li>
+      </ul>
+      <div class="ph">
+        <div class="ph-inner"><b>[Nome da imagem]</b>[o que mostra]</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sol-block">
+    <div class="wrap">
+      <h3 style="font-size:22px;">[Nome do destaque 2]</h3>
+      <p>[Parágrafo curto, 1-3 linhas, o que mudou e por quê]</p>
+      <ul class="sol-bullets">
+        <li>[bullet curto]</li>
+        <li>[bullet curto]</li>
+      </ul>
+      <div class="ph">
+        <div class="ph-inner"><b>[Nome da imagem]</b>[o que mostra]</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="learnings">
+  <div class="wrap">
+    <div class="eyebrow">Aprendizado</div>
+    <blockquote>
+      [1 reflexão só, estilo "project statement", não lista de bullets. O que essa
+      experiência ensinou sobre tomada de decisão, não só sobre o produto.]
+    </blockquote>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>MOCKUP ESTRUTURAL · 03-REDACAO.MD · [DATA]</p>
+  </div>
+</footer>
+
+</body>
+</html>
