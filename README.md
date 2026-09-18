@@ -16,8 +16,10 @@ Skill do [Claude Code](https://claude.com/claude-code) que guia a criação (ou 
 Dentro da pasta do seu projeto (onde você já roda o Claude Code):
 
 ```bash
-git clone https://github.com/fernandodilton/portfolio-pipeline .claude/skills/portfolio-pipeline
+git clone https://github.com/fernandodilton/portfolio-pipeline .claude/skills/portfolio-pipeline && echo "✅ Instalado. Se o Claude Code já estava aberto neste projeto, rode /reload-plugins na conversa (ou comece uma nova) para a skill aparecer."
 ```
+
+O Claude Code só detecta skills novas no início da sessão, não em tempo real — por isso o aviso. Se você instalar **antes** de abrir o Claude Code no projeto, nem precisa disso, já aparece direto.
 
 ## Usar
 
@@ -28,8 +30,6 @@ No Claude Code, dentro do seu projeto:
 ```
 
 Na primeira vez, ela conversa com você pra entender se quer criar um case study ou artigo do zero, continuar um em andamento, ou revisar um que já existe — e vai criando a estrutura de pastas e arquivos conforme a conversa avança.
-
-**Se o comando não aparecer logo depois de instalar:** o Claude Code só detecta skills novas no início da sessão, não em tempo real. Rode `/reload-plugins` (builds recentes) ou feche e abra o Claude Code de novo dentro do projeto — qualquer um dos dois resolve, sem risco de perder nada em andamento.
 
 ## Por que existe
 
