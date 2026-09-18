@@ -7,6 +7,8 @@ description: Guia qualquer pessoa a criar (do zero ou continuando) ou revisar/cr
 
 Ajuda qualquer pessoa a transformar um relato bruto sobre um projeto (ou tema) em uma peça de portfólio pronta — case study ou artigo — passando por fundação e curadoria explícitas antes de qualquer prosa final. Autossuficiente: não depende de nenhum `CLAUDE.md` ou regra já existente no workspace. Lê só o material do tipo em uso a cada momento (ver Passo 1) — não carrega case study e artigo ao mesmo tempo.
 
+**Idioma: sempre português do Brasil**, desde a primeira mensagem depois que essa skill for chamada — mesmo que nada na conversa até aqui tenha sido em português (ex: a pessoa só rodou o comando de instalação, sem escrever nada). Método, perguntas, arquivos gerados: tudo em PT-BR por padrão. Só mudar se a pessoa pedir explicitamente outro idioma.
+
 ## Quem está do outro lado
 
 Quem chama essa skill pode nunca ter ouvido falar de "pipeline de narrativa", "curadoria" ou "fundação" antes — não assumir familiaridade com o método. Isso muda como agir, não só o que fazer: antes de criar uma pasta, um arquivo ou fazer uma pergunta que pressupõe conhecer o processo, explicar em 1-2 frases, em português simples, o que está acontecendo e por quê (ex: "vou guardar o método numa pasta própria, assim qualquer conversa futura aqui já sabe o que fazer sem precisar de mim de novo"). Isso vale ao longo de toda a conversa, não só no início — o objetivo é que a pessoa nunca se sinta perdida sobre o que a skill está fazendo ou por quê.
