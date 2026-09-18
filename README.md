@@ -29,6 +29,8 @@ No Claude Code, dentro do seu projeto:
 
 Na primeira vez, ela conversa com você pra entender se quer criar um case study ou artigo do zero, continuar um em andamento, ou revisar um que já existe — e vai criando a estrutura de pastas e arquivos conforme a conversa avança.
 
+**Se o comando não aparecer logo depois de instalar:** o Claude Code só detecta skills novas no início da sessão, não em tempo real. Rode `/reload-plugins` (builds recentes) ou feche e abra o Claude Code de novo dentro do projeto — qualquer um dos dois resolve, sem risco de perder nada em andamento.
+
 ## Por que existe
 
 Esse método nasceu de um processo real de recolocação profissional: transformar experiência de trabalho em material de portfólio que realmente vende — sem descrição vaga, sem processo enterrando o resultado, sem perder a voz de quem conta a história. Ver `portfolio-pipeline/regras.md` (gerado no seu projeto após o primeiro uso) para o método completo.
