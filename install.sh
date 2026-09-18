@@ -11,5 +11,5 @@ fi
 git clone --quiet https://github.com/fernandodilton/portfolio-pipeline "$TARGET"
 
 echo "✅ Instalado em $TARGET."
-echo "Se o Claude Code já estava aberto neste projeto, rode /reload-plugins na conversa (ou comece uma nova) para a skill aparecer."
+echo "Se o Claude Code já estava aberto neste projeto: feche e abra de novo (no terminal, saia e rode 'claude' de novo; num editor com extensão, feche e reabra a janela/o editor). '/reload-plugins' nem sempre pega uma skill de projeto recém-instalada."
 echo "Pra usar: digite /portfolio-pipeline no Claude Code, dentro deste projeto."

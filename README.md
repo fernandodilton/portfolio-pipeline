@@ -30,7 +30,7 @@ Alguns assistentes de IA recusam rodar isso sem revisar o script antes (comporta
 
 </details>
 
-O Claude Code só detecta skills novas no início da sessão, não em tempo real. Se ele já estava aberto neste projeto quando você instalou, rode `/reload-plugins` na conversa (ou comece uma nova). Instalando **antes** de abrir o Claude Code no projeto, nem precisa disso.
+O Claude Code só detecta skills novas no início da sessão, não em tempo real. Se ele já estava aberto neste projeto quando você instalou: **feche e abra de novo** (no terminal, saia e rode `claude` de novo; num editor com extensão, feche e reabra a janela/o editor). `/reload-plugins` existe, mas em teste real não pegou uma skill de projeto recém-instalada — não confie nele sozinho. Instalando **antes** de abrir o Claude Code no projeto, nem precisa de nada disso.
 
 ## Usar
 
