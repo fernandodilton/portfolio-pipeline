@@ -7,11 +7,15 @@ description: Guia qualquer pessoa a criar (do zero ou continuando) ou revisar/cr
 
 Ajuda qualquer pessoa a transformar um relato bruto sobre um projeto (ou tema) em uma peça de portfólio pronta — case study ou artigo — passando por fundação e curadoria explícitas antes de qualquer prosa final. Autossuficiente: não depende de nenhum `CLAUDE.md` ou regra já existente no workspace. Lê só o material do tipo em uso a cada momento (ver Passo 1) — não carrega case study e artigo ao mesmo tempo.
 
-**Idioma: sempre português do Brasil**, desde a primeira mensagem depois que essa skill for chamada — mesmo que nada na conversa até aqui tenha sido em português (ex: a pessoa só rodou o comando de instalação, sem escrever nada). Método, perguntas, arquivos gerados: tudo em PT-BR por padrão. Só mudar se a pessoa pedir explicitamente outro idioma.
+**Idioma: seguir o contexto, nunca assumir inglês por padrão.**
+
+1. Se a pessoa já escreveu algo em linguagem natural nesta conversa (qualquer mensagem, mesmo antes da skill ser chamada), responder no idioma dela.
+2. Se não houver nenhum sinal de idioma ainda (ex: a pessoa só rodou o comando de instalação, sem escrever nada), checar o idioma do sistema antes de responder — rodar `echo $LANG` (ou `locale` se aquilo vier vazio) e usar o idioma que aparecer (ex: `pt_BR.UTF-8` → português; `en_US.UTF-8` → inglês).
+3. Método, perguntas e arquivos gerados seguem esse mesmo idioma. Se a pessoa trocar de idioma no meio da conversa, seguir a troca.
 
 ## Quem está do outro lado
 
-Quem chama essa skill pode nunca ter ouvido falar de "pipeline de narrativa", "curadoria" ou "fundação" antes — não assumir familiaridade com o método. Isso muda como agir, não só o que fazer: antes de criar uma pasta, um arquivo ou fazer uma pergunta que pressupõe conhecer o processo, explicar em 1-2 frases, em português simples, o que está acontecendo e por quê (ex: "vou guardar o método numa pasta própria, assim qualquer conversa futura aqui já sabe o que fazer sem precisar de mim de novo"). Isso vale ao longo de toda a conversa, não só no início — o objetivo é que a pessoa nunca se sinta perdida sobre o que a skill está fazendo ou por quê.
+Quem chama essa skill pode nunca ter ouvido falar de "pipeline de narrativa", "curadoria" ou "fundação" antes — não assumir familiaridade com o método. Isso muda como agir, não só o que fazer: antes de criar uma pasta, um arquivo ou fazer uma pergunta que pressupõe conhecer o processo, explicar em 1-2 frases simples, no idioma da conversa (ver "Idioma" acima), o que está acontecendo e por quê (ex: "vou guardar o método numa pasta própria, assim qualquer conversa futura aqui já sabe o que fazer sem precisar de mim de novo"). Isso vale ao longo de toda a conversa, não só no início — o objetivo é que a pessoa nunca se sinta perdida sobre o que a skill está fazendo ou por quê.
 
 ## Passo 1 — Garantir que o método existe neste workspace
 
@@ -20,7 +24,7 @@ Quem chama essa skill pode nunca ter ouvido falar de "pipeline de narrativa", "c
 3. **Se não existir nada equivalente:**
    - Antes de criar, explicar rapidamente o que vai acontecer (ver "Quem está do outro lado").
    - Criar a pasta `portfolio-pipeline/` na raiz do workspace.
-   - Copiar todo o conteúdo de `templates/` (deste pacote da skill) para dentro dela: `regras.md`, `case-study.md`, `artigo.md`, `diretrizes-qualidade.md`, `mockup-template.html`. Copiar tudo agora é só disco, não custa contexto — cada um só entra na conversa quando for realmente lido (ver Passo 3).
+   - Copiar todo o conteúdo de `templates/` (deste pacote da skill) para dentro dela: `regras.md`, `case-study.md`, `artigo.md`, `diretrizes-qualidade.md`, `mockup-template.html`. Copiar tudo agora é só disco, não custa contexto — cada um só entra na conversa quando for realmente lido (ver Passo 3). Os arquivos-fonte estão em português; **se o idioma detectado (ver "Idioma" acima) não for português, traduzir o conteúdo pro idioma detectado ao copiar** — preservando estrutura, tags (`🏷️`), marcadores (`⚠️ PENDENTE`, `🖼️ IMAGEM`) e nomes de arquivo exatamente como estão, só o texto em prosa muda de idioma.
    - Se já existir um `CLAUDE.md` na raiz do workspace, acrescentar uma seção curta nele referenciando `portfolio-pipeline/regras.md` (sem reescrever ou remover o resto do arquivo).
    - Se não existir `CLAUDE.md`, criar um novo só com essa referência.
 4. **Se `portfolio-pipeline/regras.md` já existir:** não sobrescrever. Esses arquivos já são o método vivo deste workspace — podem ter sido editados por quem usa.
