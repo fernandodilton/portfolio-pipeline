@@ -16,10 +16,19 @@ Skill do [Claude Code](https://claude.com/claude-code) que guia a criação (ou 
 Dentro da pasta do seu projeto (onde você já roda o Claude Code):
 
 ```bash
-git clone https://github.com/fernandodilton/portfolio-pipeline .claude/skills/portfolio-pipeline && echo "✅ Instalado. Se o Claude Code já estava aberto neste projeto, rode /reload-plugins na conversa (ou comece uma nova) para a skill aparecer."
+curl -fsSL https://raw.githubusercontent.com/fernandodilton/portfolio-pipeline/main/install.sh | bash
 ```
 
-O Claude Code só detecta skills novas no início da sessão, não em tempo real — por isso o aviso. Se você instalar **antes** de abrir o Claude Code no projeto, nem precisa disso, já aparece direto.
+<details>
+<summary>Prefere não rodar <code>curl | bash</code>? Instale manualmente</summary>
+
+```bash
+git clone https://github.com/fernandodilton/portfolio-pipeline .claude/skills/portfolio-pipeline
+```
+
+</details>
+
+O Claude Code só detecta skills novas no início da sessão, não em tempo real. Se ele já estava aberto neste projeto quando você instalou, rode `/reload-plugins` na conversa (ou comece uma nova) — o script de instalação já avisa isso no final. Instalando **antes** de abrir o Claude Code no projeto, nem precisa disso.
 
 ## Usar
 
