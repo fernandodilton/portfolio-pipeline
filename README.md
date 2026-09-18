@@ -16,19 +16,21 @@ Skill do [Claude Code](https://claude.com/claude-code) que guia a criação (ou 
 Dentro da pasta do seu projeto (onde você já roda o Claude Code):
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/fernandodilton/portfolio-pipeline/main/install.sh | bash
-```
-
-<details>
-<summary>Prefere não rodar <code>curl | bash</code>? Instale manualmente</summary>
-
-```bash
 git clone https://github.com/fernandodilton/portfolio-pipeline .claude/skills/portfolio-pipeline
 ```
 
+<details>
+<summary>Prefere um comando só? Atalho com <code>curl | bash</code></summary>
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/fernandodilton/portfolio-pipeline/main/install.sh | bash
+```
+
+Alguns assistentes de IA recusam rodar isso sem revisar o script antes (comportamento de segurança esperado, não é bug) — se acontecer, use o `git clone` acima.
+
 </details>
 
-O Claude Code só detecta skills novas no início da sessão, não em tempo real. Se ele já estava aberto neste projeto quando você instalou, rode `/reload-plugins` na conversa (ou comece uma nova) — o script de instalação já avisa isso no final. Instalando **antes** de abrir o Claude Code no projeto, nem precisa disso.
+O Claude Code só detecta skills novas no início da sessão, não em tempo real. Se ele já estava aberto neste projeto quando você instalou, rode `/reload-plugins` na conversa (ou comece uma nova). Instalando **antes** de abrir o Claude Code no projeto, nem precisa disso.
 
 ## Usar
 
