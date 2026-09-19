@@ -10,6 +10,4 @@ fi
 
 git clone --quiet https://github.com/fernandodilton/portfolio-pipeline "$TARGET"
 
-echo "✅ Instalado em $TARGET."
-echo "Se o Claude Code já estava aberto neste projeto: no terminal, saia e rode 'claude' de novo. Num editor tipo VS Code/Antigravity, Cmd/Ctrl+Shift+P > 'Developer: Reload Window'. '/reload-plugins' nem sempre pega uma skill de projeto recém-instalada."
-echo "Pra usar: digite /portfolio-pipeline no Claude Code, dentro deste projeto."
+cat "$TARGET/POST_INSTALL.txt"

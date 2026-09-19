@@ -1,0 +1,8 @@
+✅ Instalado em .claude/skills/portfolio-pipeline
+
+Se o Claude Code já estava aberto neste projeto:
+- Terminal: saia e rode "claude" de novo
+- Editor tipo VS Code/Antigravity: Cmd/Ctrl+Shift+P > "Developer: Reload Window"
+- "/reload-plugins" existe, mas em teste real não pegou uma skill de projeto recém-instalada
+
+Pra usar: digite /portfolio-pipeline no Claude Code, dentro deste projeto.

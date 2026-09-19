@@ -16,7 +16,7 @@ Skill do [Claude Code](https://claude.com/claude-code) que guia a criação (ou 
 Dentro da pasta do seu projeto (onde você já roda o Claude Code):
 
 ```bash
-git clone https://github.com/fernandodilton/portfolio-pipeline .claude/skills/portfolio-pipeline && echo "✅ Instalado. Se o Claude Code já estava aberto: no terminal, saia e rode 'claude' de novo. Num editor tipo VS Code/Antigravity, Cmd/Ctrl+Shift+P > 'Developer: Reload Window'."
+git clone https://github.com/fernandodilton/portfolio-pipeline .claude/skills/portfolio-pipeline && cat .claude/skills/portfolio-pipeline/POST_INSTALL.txt
 ```
 
 <details>
